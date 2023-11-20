@@ -1,11 +1,37 @@
 ![my-profile](https://github.com/fxcjahid/fxcjahid/assets/33903532/341a1be4-bec5-4b7a-b2f0-0ee079b48fdd)
 ![localhost_5173_my-skills (2)](https://github.com/fxcjahid/fxcjahid/assets/33903532/dd6a99c2-62f0-4096-8159-efd5b89a5025)
 
+<p width="48%">
+Backend
+
+* PHP
+* Node.js
+* Laravel
+* WordPress
+* Git & GitHub
+* Graph Ql
+* SQL & MySql
+* Browser Developer Tools
+</p>
+<div width="48%">
+Frontend
+
+* HTML & CSS
+* Tailwlind
+* Sass Css
+* Bootstrap
+* Javascript
+  * jQuery
+  * Vue.js
+  * React.js
+  * Angular.js
+
+</div>
 
 ### My GitHub Stats
 <div>
  <img align="center" width="40%" src="https://github-readme-stats.vercel.app/api/top-langs?username=fxcjahid&show_icons=true&locale=en&layout=compact" alt="fxcjahid" />
- <img align="center" width="40%" src="https://github-readme-streak-stats.herokuapp.com/?user=fxcjahid&" alt="fxcjahid" />
+ <img align="center" width="56%" src="https://github-readme-streak-stats.herokuapp.com/?user=fxcjahid&" alt="fxcjahid" />
 </div>
 <br/>
 
