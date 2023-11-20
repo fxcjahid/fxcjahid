@@ -1,5 +1,3 @@
-![Untitled-1](https://github.com/fxcjahid/fxcjahid/assets/33903532/ee9ebc7b-4444-49aa-bfcb-17b5c76721aa)
-
 ![my-profile](https://github.com/fxcjahid/fxcjahid/assets/33903532/341a1be4-bec5-4b7a-b2f0-0ee079b48fdd)
 ![localhost_5173_my-skills (2)](https://github.com/fxcjahid/fxcjahid/assets/33903532/dd6a99c2-62f0-4096-8159-efd5b89a5025)
  
