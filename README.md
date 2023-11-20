@@ -21,5 +21,6 @@
     <a href="mail:fxcjahid3@gmail.com">
         <img width="300px" src="https://github.com/fxcjahid/fxcjahid/assets/33903532/55f8adc6-aa03-4f10-864c-dee9c17618e4" />
     </a> <br/><br/>
-    <img width="265px" src="https://github.com/fxcjahid/fxcjahid/assets/33903532/627e21d6-4f7e-44dd-b6c7-5bd90442379c" /> <br/><br/>
+   <a href="https://join.skype.com/invite/RcIBdpdbIFyt">
+    <img width="265px" src="https://github.com/fxcjahid/fxcjahid/assets/33903532/627e21d6-4f7e-44dd-b6c7-5bd90442379c" />  </a> <br/><br/>
 </div>
