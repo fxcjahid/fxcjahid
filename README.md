@@ -1,15 +1,15 @@
 ![my-profile](https://github.com/fxcjahid/fxcjahid/assets/33903532/341a1be4-bec5-4b7a-b2f0-0ee079b48fdd)
- 
-![my-skills](https://github.com/fxcjahid/fxcjahid/assets/33903532/a5104065-544b-41c0-a582-8c9d01501df0)
+![localhost_5173_my-skills (2)](https://github.com/fxcjahid/fxcjahid/assets/33903532/dd6a99c2-62f0-4096-8159-efd5b89a5025)
 
 
 ### My GitHub Stats
-
 <div>
  <img align="center" width="40%" src="https://github-readme-stats.vercel.app/api/top-langs?username=fxcjahid&show_icons=true&locale=en&layout=compact" alt="fxcjahid" />
  <img align="center" width="40%" src="https://github-readme-streak-stats.herokuapp.com/?user=fxcjahid&" alt="fxcjahid" />
 </div>
 <br/>
-<div>
-   <img  align="center" height="100%" width="100%"  src="https://github-readme-stats.vercel.app/api?username=fxcjahid&show_icons=true&locale=en" alt="fxcjahid" />
-<div>
+### Hire Me 😁
+![hire-me-whatsapp](https://github.com/fxcjahid/fxcjahid/assets/33903532/03a6f691-dea4-431b-ace8-c7cfe502f5bb)
+![hire-me-skype](https://github.com/fxcjahid/fxcjahid/assets/33903532/a8a91aa9-a5fb-494b-9c96-8a8d5cabb1dc)
+![hire-me-email](https://github.com/fxcjahid/fxcjahid/assets/33903532/55f8adc6-aa03-4f10-864c-dee9c17618e4)
+![hire-me-location](https://github.com/fxcjahid/fxcjahid/assets/33903532/627e21d6-4f7e-44dd-b6c7-5bd90442379c)
