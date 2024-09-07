@@ -71,7 +71,8 @@
             "bmewburn.vscode-intelephense-client", // Using Intelephense for PHP IntelliSense
             "esbenp.prettier-vscode",
             "tal7aouy.rainbow-bracket",
-            "daylerees.rainglow"
+            "daylerees.rainglow",
+            "blade.timetracker"
         ]
     }
 }
