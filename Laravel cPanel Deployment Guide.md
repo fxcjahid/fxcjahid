@@ -34,20 +34,115 @@ Create a `.htaccess` file in your `public_html` root directory:
 ```apache
 <IfModule mod_rewrite.c>
     RewriteEngine On
-  
-    # Deny access to sensitive directories
-    RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|vendor|tests)(/.*)?$ - [F,L]
-  
-    # Redirect to public folder
+    
+    # SSL Redirection (Force HTTPS)
+    RewriteCond %{HTTPS} !on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Redirect all subdomains to main domain (dynamic) or show 404
+    RewriteCond %{HTTP_HOST} ^(.+)\.(.+\..+)$ [NC]
+    RewriteCond %1 !^www$ [NC]
+    RewriteRule ^ - [R=404,L]
+    
+    # Alternative: Redirect subdomains to main domain instead of 404
+    # RewriteCond %{HTTP_HOST} ^(.+)\.(.+\..+)$ [NC]
+    # RewriteCond %1 !^www$ [NC]
+    # RewriteRule ^ https://%2%{REQUEST_URI} [R=301,QSA,NC,L]
+    
+    # Deny access to sensitive directories and files (return 404 instead of 403)
+    RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|vendor|tests)(/.*)?$ - [R=404,L]
+    
+    # Prevent direct access to /public/ URLs - Option 1: Redirect to homepage
+    RewriteRule ^public/?(.*)$ / [R=301,L]
+    
+    # Alternative Option 2: Show 404 for /public/ URLs (uncomment to use instead)
+    # RewriteRule ^public/?(.*)$ - [R=404,L]
+    
+    # Allow access to Laravel's public index.php
+    RewriteRule ^public/index\.php$ - [L]
+    
+    # Redirect everything to public folder
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !^/public/
-    RewriteRule ^(.*)$ /public/$1 [L]
-  
-    # Handle Laravel routes
+    RewriteRule ^(.*)$ /public/$1 [L,QSA]
+    
+    # Handle Laravel routes in public folder
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^public/(.*)$ /public/index.php [L]
+    RewriteRule ^public/(.*)$ /public/index.php [L,QSA]
+</IfModule>
+
+# Security: Deny access to sensitive files (return 404 instead of 403)
+<Files ~ "^(artisan|phpunit\.xml|\.env|composer\.(json|lock)|package\.(json|lock))$">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteRule .* - [R=404,L]
+    </IfModule>
+</Files>
+
+# Security: Deny access to hidden files (return 404 instead of 403)
+<FilesMatch "^\.">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteRule .* - [R=404,L]
+    </IfModule>
+</FilesMatch>
+
+# Security: Deny access to backup and config files (return 404 instead of 403)
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|yml|yaml|config)$">
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteRule .* - [R=404,L]
+    </IfModule>
+</FilesMatch>
+
+# Disable directory browsing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault "access plus 1 month"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # Images
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 week"
+    
+    # Fonts
+    ExpiresByType application/font-woff2 "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    ExpiresByType application/x-font-ttf "access plus 1 month"
+    ExpiresByType font/opentype "access plus 1 month"
+    
+    # HTML and Data
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+</IfModule>
+
+# Enable Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 ```
 
