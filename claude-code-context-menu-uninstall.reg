@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Claude Code - REMOVE All Context Menus
+; ========================================
+; Run this to remove all Claude Code context menu entries
+; ========================================
+
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode]
+[-HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue]
+[-HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue]

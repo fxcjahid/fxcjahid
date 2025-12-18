@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Claude Code Continue - Right Click Context Menu (WSL)
+; ========================================
+; Opens Claude Code and continues last conversation
+; ========================================
+
+; --- Right-click on folder background ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue]
+@="Claude Code - Continue"
+"Icon"="wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude --continue"
+
+; --- Right-click on a folder ---
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue]
+@="Claude Code - Continue"
+"Icon"="wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude --continue"
+
+; --- Windows 11: Show in new context menu ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue]
+"ShowBasedOnVelocityId"=dword:00639bc8
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue]
+"ShowBasedOnVelocityId"=dword:00639bc8

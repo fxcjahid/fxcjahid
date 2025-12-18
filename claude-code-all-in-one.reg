@@ -1,0 +1,51 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Claude Code - All in One Context Menu
+; ========================================
+; Adds both "Open with Claude Code" and
+; "Continue with Claude Code" to right-click menu
+; With Claude Icon!
+; ========================================
+
+; ==========================================
+; OPEN WITH CLAUDE CODE
+; ==========================================
+
+; --- Right-click on folder background ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="C:\\Users\\FXC JAHID\\AppData\\Local\\ClaudeCode\\claude.ico"
+; "Position"="Top"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude"
+
+; --- Right-click on a folder ---
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="C:\\Users\\FXC JAHID\\AppData\\Local\\ClaudeCode\\claude.ico"
+; "Position"="Top"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude"
+
+; ==========================================
+; CONTINUE WITH CLAUDE CODE
+; ==========================================
+
+; --- Right-click on folder background ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue]
+@="Continue with Claude Code"
+"Icon"="C:\\Users\\FXC JAHID\\AppData\\Local\\ClaudeCode\\claude.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCodeContinue\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude --continue"
+
+; --- Right-click on a folder ---
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue]
+@="Continue with Claude Code"
+"Icon"="C:\\Users\\FXC JAHID\\AppData\\Local\\ClaudeCode\\claude.ico"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCodeContinue\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude --continue"

@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Claude Code - Right Click Context Menu (WSL)
+; ========================================
+; Opens Claude Code via Ubuntu/WSL
+; ========================================
+
+; --- Right-click on folder background ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude"
+
+; --- Right-click on a folder ---
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]
+@="Open with Claude Code"
+"Icon"="wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode\command]
+@="wt.exe -d \"%V\" wsl.exe -e claude"
+
+; --- Windows 11: Show in new context menu ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ClaudeCode]
+"ShowBasedOnVelocityId"=dword:00639bc8
+
+[HKEY_CLASSES_ROOT\Directory\shell\ClaudeCode]
+"ShowBasedOnVelocityId"=dword:00639bc8
